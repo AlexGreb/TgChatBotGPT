@@ -27,7 +27,7 @@ class Openai {
   }
   async transcription(filepath: PathLike) {
     try {
-      const response = await this.openai.createTranscription(createReadStream(filepath), 'whisper-1');
+      const response = await this.openai.createTranscription(createReadStream(filepath) as any, 'whisper-1');
       return response.data.text;
     } catch (e: any) {
       console.log('Error while transcription', e.message);

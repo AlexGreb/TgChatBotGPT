@@ -1,0 +1,51 @@
+{
+  "name": "tg-chat-bot-gpt",
+  "version": "1.0.0",
+  "description": "telegram bot for work with chatGPT",
+  "type": "module",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "scripts": {
+    "start": "npm run build && node build/main",
+    "dev": "cross-env NODE_ENV=development npx nodemon",
+    "build": "rimraf ./build && cross-env NODE_ENV=production npx tsc",
+    "lint": "npx eslint ./src",
+    "format": "npx eslint ./src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexGreb/TgChatBotGPT.git"
+  },
+  "author": "AlexGreb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexGreb/TgChatBotGPT/issues"
+  },
+  "homepage": "https://github.com/AlexGreb/TgChatBotGPT#readme",
+  "devDependencies": {
+    "@types/config": "^3.3.0",
+    "@types/fluent-ffmpeg": "^2.1.21",
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.39.0",
+    "husky": "^8.0.3",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "axios": "^1.4.0",
+    "config": "^3.3.9",
+    "fluent-ffmpeg": "^2.1.2",
+    "openai": "^3.2.1",
+    "telegraf": "^4.12.2"
+  }
+}
